@@ -29,7 +29,7 @@ app.get("/", (req,res) => {
 app.get("/member/:id", (req, res) => {
     console.log(req.params);
     const id = req.params.id;
-    res.send(`student id is ${id}`)
+    res.send(`member id is ${id}`)
 })
 
 app.get("/member", (req, res) => {
