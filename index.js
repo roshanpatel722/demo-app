@@ -23,32 +23,32 @@ app.use(express.json())
 // there are three ways to accept data from req obj which is params, query and body
 app.get("/", (req,res) => {
     res.json({
-        data:"hello new json data"
+        data:"Hello World"
     });
 })
-app.get("/student/:id", (req, res) => {
+app.get("/member/:id", (req, res) => {
     console.log(req.params);
     const id = req.params.id;
     res.send(`student id is ${id}`)
 })
 
-app.get("/student", (req, res) => {
+app.get("/member", (req, res) => {
     console.log(req.query);
     const name = req.query.name;
     const age = req.query.age;
-    res.send(`student name is ${name} and age is ${age}`);
+    res.send(`member name is ${name} and age is ${age}`);
 })
 
-app.get("/students", (req, res) => {
+app.get("/members", (req, res) => {
     res.status(200).json(data)
 })
-app.post("/student", (req, res) => {
+app.post("/member", (req, res) => {
     let values = req.body;
     data.push(values);
     res.status(201).send("data inserted successfully");
 })
 
-app.put("/student/:name", (req, res) => {
+app.put("/member/:name", (req, res) => {
     let name = req.params.name;
     let updateName = req.body.name;
     let index = data.findIndex((d) => d.name == name);
@@ -56,7 +56,7 @@ app.put("/student/:name", (req, res) => {
     res.status(201).json(data);
 })
 
-app.delete("/student/:name", (req, res) => {
+app.delete("/member/:name", (req, res) => {
     let name = req.params.name;
     let index = data.findIndex((d) => d.name == name);
     data.splice(index, 1);
