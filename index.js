@@ -3,14 +3,14 @@
 const express = require("express");
 
 
-//configuration like db
-const data = [];
 
 
 //app initialisation
 const app = express();
 
 
+//configuration like db
+const data = [];
 
 
 //app middlewares
@@ -63,6 +63,6 @@ app.delete("/member/:name", (req, res) => {
     res.status(200).json(data);
 })
 
-
+var port = process.env.PORT || 9000
 //app listen
-app.listen(9000, () => console.log("server is running"));
+app.listen(port, () => console.log("server is running"));
